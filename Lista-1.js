@@ -1,63 +1,75 @@
-//Escreva um programa que solicite ao usuário dois números inteiros e imprima a soma deles.
-var numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
-var numero2 = parseInt(prompt("Digite o segundo número inteiro:"));
+var readline = require('readline-sync');
 
-var soma = numero1 + numero2;
+// 1. Soma de dois números
+console.log("1. Soma de dois números");
+var num1 = readline.question("Digite o primeiro número: ");
+var num2 = readline.question("Digite o segundo número: ");
+var soma = Number(num1) + Number(num2);
+console.log("A soma é: " + soma);
 
-console.log("A soma de " + numero1 + " e " + numero2 + " é igual a " + soma + ".");
+// 2. Média de três números
+console.log("\n2. Média de três números");
+var numA = readline.question("Digite o primeiro número: ");
+var numB = readline.question("Digite o segundo número: ");
+var numC = readline.question("Digite o terceiro número: ");
+var media = (Number(numA) + Number(numB) + Number(numC)) / 3;
+console.log("A média é: " + media);
 
-//Peça ao usuário para inserir três números e calcule a média aritmética desses números.
-var numero1 = prompt("Digite o primeiro número:");
-var numero2 = prompt("Digite o segundo número:");
-var numero3 = prompt("Digite o terceiro número:");
+// 3. Conversão de temperatura
+console.log("\n3. Conversão de temperatura");
+var celsius = readline.question("Digite a temperatura em Celsius: ");
+var fahrenheit = (Number(celsius) * 9/5) + 32;
+console.log("A temperatura em Fahrenheit é: " + fahrenheit);
 
-var media = (numero1 + numero2 + numero3) / 3;
+// 4. Área de um retângulo
+console.log("\n4. Área de um retângulo");
+var base = readline.question("Digite a base do retângulo: ");
+var altura = readline.question("Digite a altura do retângulo: ");
+var areaRetangulo = Number(base) * Number(altura);
+console.log("A área do retângulo é: " + areaRetangulo);
 
-console.log("A média dos números " + numero1 + ", " + numero2 + " e " + numero3 + " é: " + media);
+// 5. Calculadora de IMC
+console.log("\n5. Calculadora de IMC");
+var peso = readline.question("Digite seu peso em kg: ");
+var alturaMetros = readline.question("Digite sua altura em metros: ");
+var imc = Number(peso) / (Number(alturaMetros) * Number(alturaMetros));
+console.log("Seu IMC é: " + imc.toFixed(2));
 
-//Crie um programa que converta uma temperatura em graus Celsius para Fahrenheit. Peça ao usuário para inserir a temperatura em Celsius e exiba a temperatura equivalente em Fahrenheit.
-var fahrenheit = (celsius * 9/5) + 32;
-console.log("A temperatura em Fahrenheit é: " + fahrenheit.toFixed(2));
+// 6. Troca de valores
+console.log("\n6. Troca de valores");
+var valor1 = readline.question("Digite o primeiro número: ");
+var valor2 = readline.question("Digite o segundo número: ");
+var temp = valor1;
+valor1 = valor2;
+valor2 = temp;
+console.log("Após a troca, primeiro número: " + valor1 + ", segundo número: " + valor2);
 
-//Solicite a base e a altura de um retângulo ao usuário e calcule sua área. Em seguida, exiba o resultado.
-var base = parseFloat(prompt("Digite a base do retângulo:"));
-var altura = parseFloat(prompt("Digite a altura do retângulo:"));
-var area = base * altura;
-console.log("A área do retângulo é: " + area.toFixed(2));
+// 7. Cálculo de desconto
+console.log("\n7. Cálculo de desconto");
+var preco = readline.question("Digite o preço do produto: ");
+var percentualDesconto = readline.question("Digite o percentual de desconto: ");
+var valorDesconto = (Number(percentualDesconto) / 100) * Number(preco);
+var precoFinal = Number(preco) - valorDesconto;
+console.log("O valor do desconto é: " + valorDesconto.toFixed(2));
+console.log("O preço final com desconto é: " + precoFinal.toFixed(2));
 
-//Peça ao usuário para inserir seu peso (em kg) e altura (em metros). Calcule o Índice de Massa Corporal (IMC) utilizando a fórmula IMC = peso / altura^2 e exiba o resultado.
-var peso = parseFloat(prompt("Digite seu peso em kg:"));
-var altura = parseFloat(prompt("Digite sua altura em metros:"));
-var imc = peso / (altura * altura);
-console.log("Seu Índice de Massa Corporal (IMC) é: " + imc.toFixed(2));
+// 8. Tabuada
+console.log("\n8. Tabuada");
+var numeroTabuada = readline.question("Digite um número inteiro para a tabuada: ");
+var (var i = 1; i <= 10; i++) {
+    console.log(numeroTabuada + " x " + i + " = " + (Number(numeroTabuada) * i));
+}
 
-//Leia dois números inteiros e troque seus valores. Ou seja, o valor da primeira variável deve ser atribuído à segunda variável e vice-versa.
-var numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
-var numero2 = parseInt(prompt("Digite o segundo número inteiro:"));
-console.log("Números antes da troca:");
-console.log("Primeiro número: " + numero1);
-console.log("Segundo número: " + numero2);
-var temp = numero1;
+// 9. Tempo de viagem
+console.log("\n9. Tempo de viagem");
+var distancia = readline.question("Digite a distância em quilômetros: ");
+var velocidadeMedia = readline.question("Digite a velocidade média em km/h: ");
+var tempoViagem = Number(distancia) / Number(velocidadeMedia);
+console.log("O tempo estimado de viagem é: " + tempoViagem.toFixed(2) + " horas");
 
-numero1 = numero2;
-numero2 = temp;
-
-console.log("\nNúmeros após a troca:");
-console.log("Primeiro número: " + numero1);
-console.log("Segundo número: " + numero2);
-
-//Solicite o preço de um produto e um percentual de desconto. Calcule o valor do desconto e o preço final do produto com o desconto aplicado.
-var preço = parseInt(prompt("Digite o preço do produto "))
-var desconto = parseInt(prompt("Digite o valor do desconto "))
-var valorDesconto = (preço * desconto) / 100
-var total = (preço - valorDesconto)
-console.log("O valor com desconto é " + total +".")
-
-//Peça ao usuário para inserir um número inteiro e exiba a tabuada desse número, de 1 a 10.
-var numero = parseInt(prompt("Digite um número inteiro:"));
-console.log("Tabuada do número " + numero + ":");
-for (var i = 1; i <= 10; i++) {
-var resultado = numero * i;
-console.log(numero + " x " + i + " = " + resultado);
-
-//Peça ao usuário a distância em quilômetros e a velocidade média em km/h. Calcule o tempo estimado de viagem e mostre-o ao usuário.
+// 10. Conversão monetária
+console.log("\n10. Conversão monetária");
+var taxaCambio = readline.question("Digite a taxa de câmbio: ");
+var valorReais = readline.question("Digite o valor em reais: ");
+var valorDolares = Number(valorReais) / Number(taxaCambio);
+console.log("O valor em dólares é: $" + valorDolares.toFixed(2));
